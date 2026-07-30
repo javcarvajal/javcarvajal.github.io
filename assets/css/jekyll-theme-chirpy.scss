@@ -1,0 +1,23 @@
+---
+---
+
+@use 'abstracts/variables' with (
+  $theme: '{{ site.theme_mode }}'
+);
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* append your custom style below */
+
+/* El tema pinta el borde del avatar con --avatar-border-color, que en modo
+   oscuro es rgb(206 206 206 / 90%): casi blanco y muy llamativo.
+   Se sobreescribe el box-shadow directo sobre #avatar para no depender de
+   la especificidad del selector de tema. */
+#avatar {
+  box-shadow: rgb(255 255 255 / 12%) 0 0 0 2px;
+}
