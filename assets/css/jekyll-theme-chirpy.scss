@@ -16,8 +16,10 @@
 
 /* El tema pinta el borde del avatar con --avatar-border-color, que en modo
    oscuro es rgb(206 206 206 / 90%): casi blanco y muy llamativo.
-   Se sobreescribe el box-shadow directo sobre #avatar para no depender de
-   la especificidad del selector de tema. */
-#avatar {
+
+   OJO con el selector: el tema compila `#sidebar #avatar` (dos IDs). Un
+   `#avatar` suelto tiene menos especificidad y NO gana, aunque vaya despues
+   en el archivo. Hay que repetir los dos IDs. */
+#sidebar #avatar {
   box-shadow: rgb(255 255 255 / 12%) 0 0 0 2px;
 }
